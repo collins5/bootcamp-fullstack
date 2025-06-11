@@ -2,4 +2,4 @@ check:
   script:
     - pwd
     - ls -al
-    
+    - echo 'Hello'
