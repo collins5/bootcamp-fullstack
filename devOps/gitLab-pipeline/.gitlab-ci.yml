@@ -1,19 +1,37 @@
+stages:
+  - package
+
+check:
+  stage: .pre
+  script:
+    - ls -al
+
+clean:
+  stage: .post
+  script:
+    - rm -rf *
+
 build:
+  stage: build
   script:
     - echo "build"
 
 test:
+  stage: test
   script:
     - echo "test"
 
 package:
+  stage: package
   script:
     - echo "package"
 
 build image:
+  stage: package
   script:
     - echo "build image"
 
 deploy:
+  stage: deploy
   script:
     - echo "deploy"
