@@ -1,4 +1,4 @@
-image: node:21
+image: node:20
 
 stages:
   - build
@@ -9,12 +9,16 @@ stages:
 install:
   stage: build
   script:
+    - ls -al
     - npm ci
+    - ls -al
 
 build:
   stage: build
   script:
     - ls -al
+  needs:
+    - install
 
 
   artifacts:
