@@ -6,22 +6,17 @@ stages:
   - package
   - deploy
 
-install:
-  stage: build
-  script:
-    - npm install
-    
 build:
   stage: build
+  before_script:
+    - npm install
   script:
-    - ls -al
-  needs:
-    - install
-
+    - npm run build
 
   artifacts:
     paths:
-      - dist/
+      - dist
+    expire_in: 30 days
 
 test:
   stage: test
@@ -34,9 +29,12 @@ package:
     - ls -al
 
 build image:
+  image: docker:28.1.1
   stage: package
+  services:
+    - docker:28.1.1-dind
   script:
-    - ls -al
+    - docker build -t stacdev/firstGitLab-pipeline:latest .
 
 deploy:
   stage: deploy
