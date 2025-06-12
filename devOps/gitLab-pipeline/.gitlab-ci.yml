@@ -1,43 +1,16 @@
-<<<<<<< HEAD
-=======
 image: node:20
 
->>>>>>> main
 stages:
   - build
   - test
   - package
-<<<<<<< HEAD
-  - deploy 
-
-# check:
-#   stage: .pre
-#   script:
-#     - ls -al
-
-# clean:
-#   stage: .post
-#   script:
-#     - rm -rf *
-
-build:
-  stage: build
-  image: node:21
-  script:
-    - npm install
-    - npm run build
-=======
   - deploy
 
 install:
   stage: build
   script:
-    - npm ci
-  artifacts:
-    paths:
-      - node_modules/
-    expire_in: "30 days"
-
+    - npm install
+    
 build:
   stage: build
   script:
@@ -49,40 +22,23 @@ build:
   artifacts:
     paths:
       - dist/
->>>>>>> main
 
 test:
   stage: test
   script:
-<<<<<<< HEAD
-    - echo "test"
-=======
     - ls -al
->>>>>>> main
 
 package:
   stage: package
   script:
-<<<<<<< HEAD
-    - echo "package"
-=======
     - ls -al
->>>>>>> main
 
 build image:
   stage: package
   script:
-<<<<<<< HEAD
-    - echo "build image"
-=======
     - ls -al
->>>>>>> main
 
 deploy:
   stage: deploy
   script:
-<<<<<<< HEAD
-    - echo "deploy"
-=======
     - ls -al
->>>>>>> main
