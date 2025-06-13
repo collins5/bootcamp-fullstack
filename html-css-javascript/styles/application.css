@@ -1,9 +1,31 @@
 body {
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     color: #06d132;
     font-size: 16px;
 }
 
-.titre{
+button {
+    cursor: pointer;
+}
+
+.titre {
     font-size: 24px;
+}
+
+.link:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.button {
+    background: rgb(241, 234, 234);
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    font-weight: normal;
+    box-shadow: -2px 1px 1px red;
+}
+
+.button:hover {
+    background-color: blue;
 }
